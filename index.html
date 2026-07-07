@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+
+    <style>
+        body {
+            margin: 0;
+            background-color: white;
+        }
+
+        header {
+            background-color: blue;
+            color: white;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        main {
+            background-color: white;
+            color: blue;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        article {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .artigo-autor {
+            font-weight: bold;
+        }
+
+        button {
+            margin-right: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Meu Blog</h1>
+    <p>Vou compartilhar conhecimentos sobre tecnologia</p>
+</header>
+
+<main>
+
+    <article>
+        <img src="https://img.icons8.com/fluency/96/laptop.png" alt="Computador">
+        <div>
+            <h2>Meu primeiro post</h2>
+            <p class="artigo-autor">Por: Carlos</p>
+            <p>Neste blog vou compartilhar conhecimentos e curiosidades sobre tecnologia.</p>
+            <button>❤️<span>0</span></button>
+            <button>👍<span>0</span></button>
+        </div>
+    </article>
+
+    <article>
+        <img src="https://img.icons8.com/fluency/96/laptop.png" alt="Computador">
+        <div>
+            <h2>Meu segundo post</h2>
+            <p class="artigo-autor">Por: Carlos</p>
+            <p>A IMPORTÂNCIA DA TECNOLOGIA: A tecnologia faz parte da nossa rotina e facilita diversas tarefas, como estudar, trabalhar, se comunicar e encontrar informações. Neste post vou compartilhar curiosidades e novidades sobre esse universo.</p>
+            <button>❤️<span>0</span></button>
+            <button>👍<span>0</span></button>
+        </div>
+    </article>
+
+</main>
+
+<script>
+const botoes = document.querySelectorAll("button");
+
+botoes.forEach(botao => {
+    let curtiu = false;
+
+    botao.addEventListener("click", function(evento) {
+        const botao = evento.currentTarget;
+        const texto = botao.querySelector("span");
+
+        if (!curtiu) {
+            texto.textContent++;
+            curtiu = true;
+        } else {
+            texto.textContent--;
+            curtiu = false;
+        }
+    });
+});
+</script>
+
+</body>
+</html>
